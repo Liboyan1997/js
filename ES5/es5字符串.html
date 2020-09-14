@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!-- <script type="text/javascript">
+	//1 indexOf 
+	//2 lastIndexOf
+	//3 substring(n,m) 截取字符串左闭右开
+	//4 slice(n,m) 截取字符串 m,n可以取负值
+	//5 split("") 通过指定字符分割字符串,返回一个数组
+	//5 replace("需要被替换的字符串","替换的字符串")
+	
+</script> -->
+<!-- <script type="text/javascript">
+	function orderByWeight(input) {
+		let reg1=/\d+/g
+		let str=input.match(reg1);
+		console.log(str);
+	     let arrObj = str.map(function(value,index){
+			let obj={};
+			obj.val=value;
+			obj.weight=value.split("").reduce(function(sum,x,index,a){
+				return Number(sum)+Number(x);
+			})
+			return obj;
+	})
+	arrObj.sort(function(l,r){
+		return l.weight-r.weight
+	});
+	return arrObj;
+	}
+	console.log(orderByWeight("56 65 74 400 99 68 86 180 90")) 
+</script>
+ -->

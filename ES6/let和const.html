@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//let
+	//1 块级作用域
+	//2 暂时性死区
+	//3 没有变量提升
+	
+	//const 
+	// 一旦声明就不能改变值,声明的时候必须赋值
+	
+	// 对于const定义的引用类型 可以修改他的属性 但是不能改变他的地址的指向 并且定义时可以不赋值
+	const foo={};
+	foo.prop=123;
+	foo.prop
+	
+	foo={}; // 将foo指向另一个对象，就会报错
+	// 对于数组const也是如此
+	const a = [];
+	a.push('Hello'); // 可执行
+	a.length = 0;    // 可执行
+	a = ['Dave'];    // 报错
+</script>

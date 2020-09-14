@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//async 函数返回一个promise对象,可以用then 添加回调函数
+	async function helloAsync(){
+		// return "helloAsync";
+	}
+	let a=helloAsync().then(()=>{
+		console.log("async");
+	})
+	console.log(a)//打印 promise
+	// 复习一下promise
+	// function fun1() {
+	// 	let p = new Promise(function(resolve, reject) {
+	// 		console.log("fun1_同步");
+	// 		setTimeout(function() {
+	// 			console.log("fun1_异步");
+	// 			resolve();
+	// 		}, 1000);
+	// 	});
+	// 	return p;
+	// }
+	// fun1().then(function(){
+	// 	console.log("promise")
+	// })
+</script>

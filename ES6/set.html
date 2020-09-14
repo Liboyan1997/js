@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//set 类似于数学中集合的概念
+	// undefined和undefined是恒等的,所以不重复
+	// NaN和NaN是不恒等,但是在set中只能存一个
+	// set的方法
+	// .add() 添加
+	// .delete(val) 删除
+	// .has(val) 判断集合中是否含有某个值 返回Boolean值
+	// .clear() 清空集合
+	// var set = new Set([2, 4, 6, 8, 1]);
+	// set.add(100);
+	// set.delete(4);
+	// console.log(set.has(0), set);
+	// let mySet = new Set();
+	// var o = {
+	// 	a: 1,
+	// 	b: 2
+	// };
+	// mySet.add(o);
+	// mySet.add({
+	// 	a: 1,
+	// 	b: 2
+	// });
+	// mySet {{a:1,b:2},{a:1,b:2}} 对于引用类型值相等 本身不相等
+	// console.log(mySet)
+	// Array 转 Set
+	var mySet = new Set(["value1", "value2", "value3"]);
+	// 用...操作符，将 Set 转 Array
+	var myArray = [...mySet];
+	//类型转换
+	//Array 转set
+	var mySet = new Set(["value1", "value2", "value3"]);
+	// set转Array
+	var myArray=[...mySet];
+	var brr=Array.from(mySet);
+</script>

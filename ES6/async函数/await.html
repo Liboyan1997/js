@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// async 函数中可能会有await表达式,async函数执行时,如果遇到await就会等待异步操作执行完在执行后面的代码
+	function testAwait(){
+	   return new Promise((resolve) => {
+	       setTimeout(function(){
+	          resolve();
+			  console.log(2)
+	       }, 1);
+	   });
+	}
+	 // await 只能出现在async 函数中 awiat 后面只能跟着一个promise 对象
+	async function helloAsync(){
+	   await testAwait().then(
+	   // ()=>{
+		  //  console.log("async await")
+	   // }
+	   console.log(1)
+	   );
+	   console.log(3);
+	 }
+	 helloAsync();
+	 
+	 async function step(res){
+		 await new Promise(res=>{
+			 setTimeout(function(){
+			    res();
+			 			  console.log("第一步")
+			 }, 1);
+		 })
+	 }
+	async function main(){
+		 await step()
+		 console.log("第二步")
+	 }
+	 main()
+</script>

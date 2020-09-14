@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 1  arr.indexOf(item);
+	//2 arr.lastIndexOf(item)
+	//3 forEach; 调用数组每一个元素没有返回值
+	// var arr = ["a","b",255,512,"hello"];
+	// 
+	// var a = arr.forEach(function(value,index){
+	// 
+	// console.log(value);     //a b 255 512 hello
+	// 
+	// console.log(index);      //0 1 2 3 4
+	// 
+	// })
+	// console.log(a)//unidefind
+	//3 map 返回一个被操作后的新数组,不会改变原数组.一般配合return使用
+	var arr=[1,2,3,4,5]
+	var arr2=arr.map(function(value,index,arr){
+		console.log(value,index);
+		console.log(arr);
+		return value+5;
+	})
+	// console.log(arr2);
+	//4 filter 过滤数组元素并返回一个新数组,不会改变原数组
+	var arr3=arr2.filter(function(value,index){
+		return pre>7
+	})
+	// console.log(arr3,arr2);
+	
+	// 5 reducle 累加器 最终返回一个值
+	console.log(arr.reduce(function(prev,value,index,arr){
+		console.log(value,index)
+		console.log(arr)
+		return total+value;
+	}))
+	
+</script>

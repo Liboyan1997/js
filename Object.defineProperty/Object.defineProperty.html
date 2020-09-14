@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//Object.defineProperty(obj,prop,desc)
+	// 1.obj需要定义属性的当前对象
+	// 2.prop 当前需要定义的属性名
+	// 3.desc属性描述符
+	// 属性符的默认规则
+	var obj  = {};
+	Object.defineProperty(obj, 'name', {
+	        get: function() {
+	            console.log('我被获取了')
+	            return val;
+	        },
+	        set: function (newVal) {
+	            console.log('我被设置了',newVal);
+	        }
+	})
+	obj.name = 'fei';//在给obj设置name属性的时候，触发了set这个方法
+	var val = obj.name;//在得到obj的name属性，会触发get方法
+	// obj.name="sss"
+	// console.log(obj)
+	
+</script>

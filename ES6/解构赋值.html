@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// //数组模型解构
+	// let [a,b,c]=[1,2,3];
+	// // 值交换
+	// let a=1;
+	// let b=0;
+	// [a,b]=[b,a]
+	// //可嵌套
+	// let [a,[[b],c]]=[1,[[2],3]];
+	// //可忽略
+	// let [a,,b]=[1,2,3]
+	// //不完全解构
+	// let [a=1,b]=[] //a=1,b=unidefined
+	// //剩余运算符
+	// let [a,...b]=[1,2,3];//a=1,b=[2,3]
+	// //解构默认值
+	// let [a=2]=[undefined]; //a=2
+	// //字符串解构
+	// let [a,b,c,d,e]="world"// a="w" b="o"...
+	// 数组合并
+	let arr =[...brr,...crr]
+	//对象解构 变量名称要和对象的键名字相同
+	//可嵌套可忽略
+	let obj = {p: ['hello', {y: 'world'}] };
+	let {p: [x, { y }] } = obj;
+	let {p}=obj;
+	console.log(p,x,y) //p=["hello",{y:"world"}],x="hello" y="world"
+	let{p:[x,{}]}=obj; //x="hello"
+	//剩余运算符
+	let {a,b,...rest}={a:10,b:20,c:30,d:40} ,//a=10,b=20,rest={c:30,d:40}
+	//解构默认值
+	let {a=10,b=5}={a:undefined}; //a=10 ,b=5
+	let {a:aa=10,b:bb=5}={a:3};  //aa=3;bb=5;
+	// 对象合并
+	let obj={...obj1,...obj2}
+</script>

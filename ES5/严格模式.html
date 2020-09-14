@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	"use strict";
+	// 1 变量必须要声明
+	// a=10;
+	// console.log(a);//报错
+	// 2 函数内不允许出现重名参数
+	// function fun(a,b,b){
+	// 	console.log(a,b,b)
+	// }
+	// fun(1,2,2)//报错
+	
+	//3 this无法指向全局变量window
+	// function fn(){
+	// 	console.log(this)
+	// }
+	// fn();
+	//4 arguments对象不允许动态修改
+	function fn(a,b){
+	
+	a = 20;
+	
+	console.log(a);
+	
+	console.log(b);
+	
+	console.log(arguments);         //2,3
+	
+	}
+	fn(2,3)
+</script>
