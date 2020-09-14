@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+						width:60px;
+						height: 60px;
+						background-color:pink;
+						margin: 0 auto;
+						transition: all 1s linear 0ms;
+					}
+		</style>
+		
+	</head>
+	<body>
+		<div id="div"></div>
+		<button type="button" onclick="pause()">消失</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var dd=document.querySelector("#div");
+	//过渡结束 执行
+	 dd.addEventListener("transitionend", ()=>{
+		 console.log("transition end")
+	 }, false);
+	 
+	function pause(){
+		 dd.style.opacity="0";
+		 // console.log("pause")
+	 }
+</script>

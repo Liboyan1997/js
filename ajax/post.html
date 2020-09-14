@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function fun(url,data){
+		let xhr;
+		if (window.ActiveXObject) {
+		    //ie
+		    xhr = new ActiveXObject("Microsoft.XMLHttp");
+		} else {
+		    //非ie
+		    xhr =  new XMLHttpRequest();
+		}
+		  xhr.open("POST",url,true);
+		xhr.setRequestHeader({
+		      scid: 'sc9526AF69EEC9FE3B',
+		      'user-agent': 'Mozilla/4.0 MDN Example',
+		      'content-type': 'application/json',
+		});
+		
+		xhr.onreadystatechange = function(){
+			if(xhr.status == 200 && xhr.readyState == 4){
+				fun(xhr.responseText);
+			}
+		}
+		//传参方式  "key1=value1&key2=value2"
+		xhr.send(data);
+	}
+	const a="https://tst.web.gov.shencom.cn/service-cms/ncms/word/sensitive/badword/check"
+	const b=JSON.stringify({
+		badword:"嘻嘻嘻，哈哈哈，大傻逼"
+	})
+	console.log(fun(a,b))
+</script>

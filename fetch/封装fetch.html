@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	import qs from "qs";
+	 const http = (type, url, data) => {
+	  // url = BASE_API + url
+	  let options = {}
+	  if (type === 'post') {
+	    options = {
+	      method: 'POST',
+	      mode: "no-cors",
+	      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	      body: qs.stringify(data)
+	    }
+	  } else if (type === 'get') {
+	    if (data && typeof data === 'object') {
+	      const paramArray = []
+	      Object.keys(data).forEach(key => paramArray.push(key + '=' + data[key]))
+	      if (url.indexOf('?') === -1) {
+	        url += '?' + paramArray.join('&')
+	      } else {
+	        url = '&' + paramArray.json('&')
+	      }
+	      options = { method: 'GET' }
+	    } else if (!data) {
+	      options = { method: 'GET' }
+	    } else {
+	      alert('参数有误')
+	    }
+	  }
+	  return fetch(url, options)
+	}
+	
+	let url="https://aip.baidubce.com/rest/2.0/solution/v1/text_censor/v2/user_defined?access_token=25.0ff15e3adb17e300af5c4be65f83af26.315360000.1911192801.282335-21625222"
+	let data={text:"嘻嘻嘻，哈哈哈sadadsad大傻逼我是你爸爸"}
+	http('post',url,data).then((data)=>{
+		console.log(data)
+	});
+</script>

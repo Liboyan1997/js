@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				width:60px;
+				height: 60px;
+				background-color:pink;
+				margin: 0 auto;
+				animation: transform_ani 5s linear 0ms 3 both;
+			}
+			 @keyframes transform_ani {
+			            0% {
+			               
+			                transform: scale(1) translateY(0);
+			            }
+			            100% {
+			           
+			                transform: scale(2) translateY(300px);
+			            }
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div"></div>
+		<button type="button" onclick="pause()">停止</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var dd=document.querySelector("#div");
+	//动画开始事件
+	 dd.addEventListener("animationstart", ()=>{
+		 console.log("ani start")
+	 }, false);
+	 //动画结束事件 每次重新开始时 执行
+	 dd.addEventListener("animationend", ()=>{
+	 		 console.log("ani end")
+	 }, false);
+	 //动画重复事件 动画完全停止时执行  动画暂停时也不会触发
+	 dd.addEventListener("animationiteration", ()=>{
+	 		 console.log("ani loop")
+	 }, false);
+	 
+	function pause(){
+		 dd.style.animationPlayState="paused";
+		 console.log("pause")
+	 }
+</script>
